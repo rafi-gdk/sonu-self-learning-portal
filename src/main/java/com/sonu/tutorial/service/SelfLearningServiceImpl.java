@@ -39,8 +39,8 @@ public class SelfLearningServiceImpl implements SelfLearningService {
     @Override
     public String addTopicUi(TopicRequest topics) throws IOException {
 
-        topics.setTopicName(StringUtils.capitalize(topics.getTopicName()));
-        topics.setSubTopicName(StringUtils.capitalize(topics.getSubTopicName()));
+        topics.setTopicName(StringUtils.capitalize(topics.getTopicName().trim()));
+        topics.setSubTopicName(StringUtils.capitalize(topics.getSubTopicName().trim()));
 
         Topic byTopicName = repository.findByTopicName(topics.getTopicName());
         if (null != byTopicName) {

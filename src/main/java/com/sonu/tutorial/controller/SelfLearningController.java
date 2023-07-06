@@ -26,6 +26,7 @@ public class SelfLearningController {
     @PostMapping(value = "/add-topic-ui", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE},
             produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<String> addTopicUi(TopicRequest topics) throws IOException {
+        System.out.println("SelfLearningController.addTopicUi--"+topics);
         topics.setContent(topics.getContent().replace(" ", "&nbsp;"));
         return new ResponseEntity<>(selfLearningService.addTopicUi(topics), HttpStatus.ACCEPTED);
     }

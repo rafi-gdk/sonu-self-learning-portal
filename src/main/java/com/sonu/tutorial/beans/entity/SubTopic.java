@@ -12,9 +12,8 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "SUB_TOPICS")
+@Table(name = "SUB_TOPIC")
 public class SubTopic implements Serializable {
-
 
     @Id
     @GeneratedValue(generator = "gen_uuid")
