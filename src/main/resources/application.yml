@@ -1,0 +1,22 @@
+server:
+  port: 1001
+  servlet.context-path: /tutorial-service # It is the root uri eg: http://localhost:1001/tutorial-service
+
+spring:
+  application:
+    name: customer-service
+  datasource:
+    #Postgres Database
+    url: jdbc:postgresql://192.168.0.101:5432/postgres
+    username: postgres
+    password: 123456789
+  jpa:
+    hibernate.ddl-auto: create-drop
+    show-sql: true
+    properties.hibernate.format_sql: true
+#    defer-datasource-initialization: true
+#  sql.init.mode: always
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
